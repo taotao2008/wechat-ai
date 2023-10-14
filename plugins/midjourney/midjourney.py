@@ -194,13 +194,13 @@ class Midjourney(Plugin):
                     prompt = task['properties']['finalPrompt']
                     reply = Reply(ReplyType.TEXT, (
                                 reply_prefix + '✅ 任务已完成\n📨 任务ID: %s\n%s\n\n' + self.get_buttons(
-                            task) + '\n' + '💡提示：发送"/up+任务ID+序号"执行下一步动作\n🔖 例如执行放大图1动作：\n/up %s 1') % (
+                            task) + '\n' + '💡提示：发送"/up+任务ID+序号"执行下一步动作\n🔖 例如发送以下命令执行动作1：\n/up %s 1') % (
                                       task_id, prompt, task_id))
                     self.channel.send(reply, context)
                 elif action == 'UPSCALE':
                     reply = Reply(ReplyType.TEXT,
                                   ('✅ 任务已完成\n📨 任务ID: %s\n✨ %s\n\n' + self.get_buttons(
-                                      task) + '\n' + '💡提示：发送"/up+任务ID+序号"执行下一步动作\n🔖 例如执行放大图1动作：\n/up %s 1') % (
+                                      task) + '\n' + '💡提示：发送"/up+任务ID+序号"执行下一步动作\n🔖 例如发送以下命令执行动作1：\n/up %s 1') % (
                                       task_id, description, task_id))
                     url_reply = Reply(ReplyType.IMAGE_URL, task['imageUrl'])
                     self.channel.send(url_reply, context)
@@ -208,7 +208,7 @@ class Midjourney(Plugin):
                 else:
                     reply = Reply(ReplyType.TEXT,
                                   ('✅ 任务已完成\n📨 任务ID: %s\n✨ %s\n\n' + self.get_buttons(
-                                      task) + '\n' + '💡提示：发送"/up+任务ID+序号"执行下一步动作\n🔖 例如执行放大图1动作：\n/up %s 1') % (
+                                      task) + '\n' + '💡提示：发送"/up+任务ID+序号"执行下一步动作\n🔖 例如发送以下命令执行动作1：\n/up %s 1') % (
                                       task_id, description, task_id))
                     image_storage = self.download_and_compress_image(task['imageUrl'])
                     url_reply = Reply(ReplyType.IMAGE, image_storage)

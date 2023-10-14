@@ -235,6 +235,8 @@ class Midjourney(Plugin):
             name = button['emoji'] + button['label']
             if name in ['🎉Imagine all', '❤️']:
                 continue
+            if name == "U1":
+                name = "放大图1"
             res += ' %d- %s\n' % (index, name)
             index += 1
         return res

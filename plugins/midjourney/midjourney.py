@@ -237,6 +237,44 @@ class Midjourney(Plugin):
                 continue
             if name == "U1":
                 name = "放大图1"
+            if name == "U2":
+                name = "放大图2"
+            if name == "U3":
+                name = "放大图3"
+            if name == "U4":
+                name = "放大图4"
+            if name.find("🔄") != -1:
+                name = "重新生成"
+            if name == "V1":
+                name = "微调图1"
+            if name == "V2":
+                name = "微调图2"
+            if name == "V3":
+                name = "微调图3"
+            if name == "V4":
+                name = "微调图4"
+            if name.find("Strong") != -1:
+                name = "超强变幻"
+            if name.find("Strong") != -1:
+                name = "超强变幻"
+            if name.find("Subtle") != -1:
+                name = "微变幻"
+            if name.find("Region") != -1:
+                name = "局部重绘(网页版支持)"
+            if name.find("Zoom Out 2x") != -1:
+                name = "Zoom Out 1.5x"
+            if name.find("Custom Zoom") != -1:
+                name = "扩图自定义(网页版支持)"
+            if name.find("⬅️") != -1:
+                name = "向左平移"
+            if name.find("➡️") != -1:
+                name = "向右平移"
+            if name.find("⬆️") != -1:
+                name = "向上平移"
+            if name.find("⬇️") != -1:
+                name = "向下平移"
+
+
             res += ' %d- %s\n' % (index, name)
             index += 1
         return res

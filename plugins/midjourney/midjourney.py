@@ -262,7 +262,9 @@ class Midjourney(Plugin):
             if name.find("Region") != -1:
                 name = "局部重绘(网页版支持)"
             if name.find("Zoom Out 2x") != -1:
-                name = "Zoom Out 1.5x"
+                name = "扩图2倍"
+            if name.find("Zoom Out 1.5x") != -1:
+                name = "扩图1.5倍"
             if name.find("Custom Zoom") != -1:
                 name = "扩图自定义(网页版支持)"
             if name.find("⬅️") != -1:

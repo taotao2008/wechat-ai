@@ -32,10 +32,10 @@ class Hello(Plugin):
 
         if e_context["context"].type == ContextType.JOIN_GROUP:
             e_context["context"].type = ContextType.TEXT
-            #msg: ChatMessage = e_context["context"]["msg"]
+            msg: ChatMessage = e_context["context"]["msg"]
             #e_context["context"].content = f'请你随机使用一种风格说一句问候语来欢迎新用户"{msg.actual_user_nickname}"加入群聊。'
             #e_context.action = EventAction.BREAK  # 事件结束，进入默认处理逻辑
-            reply = Reply(ReplyType.INFO, self.get_help_text_custom(verbose=True))
+            reply = Reply(ReplyType.INFO, self.get_help_text_custom(username=msg.actual_user_nickname,verbose=True))
             e_context["reply"] = reply
             e_context.action = EventAction.BREAK_PASS
             return
@@ -77,6 +77,6 @@ class Hello(Plugin):
         help_text = "输入Hello，我会回复你的名字\n输入End，我会回复你世界的图片\n"
         return help_text
 
-    def get_help_text_custom(self, **kwargs):
-        help_text = "欢迎加入全民AI大家庭！我可以跟你一起玩文字冒险游戏，还可以帮你画图哦！\n发送#help 获取教程，你就知道怎么使用我啦！\n有任何问题可以at群里的'全民AI硬核客服'哦\n"
+    def get_help_text_custom(self, username, **kwargs):
+        help_text = f'👏👏欢迎 "{username}" 加入全民AI大家庭！我可以跟你一起玩文字冒险游戏，还可以帮你画图哦！\n发送#help 获取教程，你就知道怎么使用我啦！\n有任何问题可以at群里的"全民AI硬核客服"哦\n'
         return help_text

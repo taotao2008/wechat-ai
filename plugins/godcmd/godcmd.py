@@ -132,37 +132,38 @@ ADMIN_COMMANDS = {
 
 # 定义帮助函数
 def get_help_text(isadmin, isgroup):
-    help_text = "通用指令：\n"
-    for cmd, info in COMMANDS.items():
-        if cmd == "auth":  # 不提示认证指令
-            continue
-        if cmd == "id" and conf().get("channel_type", "wx") not in ["wxy", "wechatmp"]:
-            continue
-        alias = ["#" + a for a in info["alias"][:1]]
-        help_text += f"{','.join(alias)} "
-        if "args" in info:
-            args = [a for a in info["args"]]
-            help_text += f"{' '.join(args)}"
-        help_text += f": {info['desc']}\n"
-
-    # 插件指令
-    plugins = PluginManager().list_plugins()
-    help_text += "\n目前可用插件有："
-    for plugin in plugins:
-        if plugins[plugin].enabled and not plugins[plugin].hidden:
-            namecn = plugins[plugin].namecn
-            help_text += "\n%s:" % namecn
-            help_text += PluginManager().instances[plugin].get_help_text(verbose=False).strip()
-
-    if ADMIN_COMMANDS and isadmin:
-        help_text += "\n\n管理员指令：\n"
-        for cmd, info in ADMIN_COMMANDS.items():
-            alias = ["#" + a for a in info["alias"][:1]]
-            help_text += f"{','.join(alias)} "
-            if "args" in info:
-                args = [a for a in info["args"]]
-                help_text += f"{' '.join(args)}"
-            help_text += f": {info['desc']}\n"
+    help_text = "GPT-MJ机器人使用教程：https://mp.weixin.qq.com/s/wt06K74WziiYV4JTcsa31w \n"
+    #help_text = "通用指令：\n"
+    # for cmd, info in COMMANDS.items():
+    #     if cmd == "auth":  # 不提示认证指令
+    #         continue
+    #     if cmd == "id" and conf().get("channel_type", "wx") not in ["wxy", "wechatmp"]:
+    #         continue
+    #     alias = ["#" + a for a in info["alias"][:1]]
+    #     help_text += f"{','.join(alias)} "
+    #     if "args" in info:
+    #         args = [a for a in info["args"]]
+    #         help_text += f"{' '.join(args)}"
+    #     help_text += f": {info['desc']}\n"
+    #
+    # # 插件指令
+    # plugins = PluginManager().list_plugins()
+    # help_text += "\n目前可用插件有："
+    # for plugin in plugins:
+    #     if plugins[plugin].enabled and not plugins[plugin].hidden:
+    #         namecn = plugins[plugin].namecn
+    #         help_text += "\n%s:" % namecn
+    #         help_text += PluginManager().instances[plugin].get_help_text(verbose=False).strip()
+    #
+    # if ADMIN_COMMANDS and isadmin:
+    #     help_text += "\n\n管理员指令：\n"
+    #     for cmd, info in ADMIN_COMMANDS.items():
+    #         alias = ["#" + a for a in info["alias"][:1]]
+    #         help_text += f"{','.join(alias)} "
+    #         if "args" in info:
+    #             args = [a for a in info["args"]]
+    #             help_text += f"{' '.join(args)}"
+    #         help_text += f": {info['desc']}\n"
     return help_text
 
 

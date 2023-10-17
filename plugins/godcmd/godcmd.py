@@ -132,7 +132,7 @@ ADMIN_COMMANDS = {
 
 # 定义帮助函数
 def get_help_text(isadmin, isgroup):
-    help_text = "GPT-MJ机器人使用教程：https://mp.weixin.qq.com/s/wt06K74WziiYV4JTcsa31w \n"
+    help_text = f"GPT-MJ机器人使用教程：https://mp.weixin.qq.com/s/wt06K74WziiYV4JTcsa31w\n更多功能欢迎使用网页版：https://ai.qmai.chat\n"
     #help_text = "通用指令：\n"
     # for cmd, info in COMMANDS.items():
     #     if cmd == "auth":  # 不提示认证指令
@@ -217,7 +217,8 @@ class Godcmd(Plugin):
 
         content = e_context["context"].content
         logger.debug("[Godcmd] on_handle_context. content: %s" % content)
-        if content.startswith("#"):
+        if content.startswith(conf().get("group_chat_prefix")):
+        #if content.startswith("#"):
             if len(content) == 1:
                 reply = Reply()
                 reply.type = ReplyType.ERROR

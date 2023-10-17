@@ -217,8 +217,7 @@ class Godcmd(Plugin):
 
         content = e_context["context"].content
         logger.debug("[Godcmd] on_handle_context. content: %s" % content)
-        if content.startswith(conf().get("group_chat_prefix")):
-        #if content.startswith("#"):
+        if content.startswith("#"):
             if len(content) == 1:
                 reply = Reply()
                 reply.type = ReplyType.ERROR

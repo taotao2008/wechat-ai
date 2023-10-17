@@ -78,5 +78,5 @@ class Hello(Plugin):
         return help_text
 
     def get_help_text_custom(self, username, **kwargs):
-        help_text = f'👏👏欢迎 "{username}" 加入全民AI大家庭！我是gpt-mj机器人，既支持chatgpt问答，也支持midjourney画图哦！\nGPT-MJ机器人使用教程：https://mp.weixin.qq.com/s/wt06K74WziiYV4JTcsa31w\n更多功能欢迎使用网页版：https://ai.qmai.chat\n有任何问题可以at群主"全民AI硬核客服"哦\n'
+        help_text = f'👏👏欢迎 "{username}" 加入全民AI大家庭！\n我是gpt-mj机器人，既支持chatgpt问答，也支持midjourney画图哦！\nGPT-MJ机器人使用教程：https://mp.weixin.qq.com/s/wt06K74WziiYV4JTcsa31w\n更多功能欢迎使用网页版：https://ai.qmai.chat\n有任何问题可以at群主"全民AI硬核客服"哦\n'
         return help_text

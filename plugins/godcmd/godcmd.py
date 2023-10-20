@@ -132,7 +132,7 @@ ADMIN_COMMANDS = {
 
 # 定义帮助函数
 def get_help_text(isadmin, isgroup):
-    help_text = f"GPT-MJ机器人使用教程：https://mp.weixin.qq.com/s/wt06K74WziiYV4JTcsa31w\n更多AI功能请访问全民AI(会员版)：https://sourl.cn/aJR2mw\n"
+    help_text = f"GPT-MJ机器人使用教程：https://mp.weixin.qq.com/s/wt06K74WziiYV4JTcsa31w\n更多AI功能请访问全民AI(会员版)：https://aia.rs\n"
     #help_text = "通用指令：\n"
     # for cmd, info in COMMANDS.items():
     #     if cmd == "auth":  # 不提示认证指令
